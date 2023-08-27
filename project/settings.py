@@ -44,6 +44,13 @@ INSTALLED_APPS = [
 
 ASGI_APPLICATION = 'project.asgi.application'
 
+CHANNEL_LAYERS = {
+    'default': {
+        # 'BACKEND': 'channels_redis.core.RedisChannelLayer', # В продакшене лучше использовать
+        'BACKEND': 'channels.layers.InMemoryChannelLayer' # Для теста
+    }
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
