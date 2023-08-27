@@ -14,7 +14,8 @@
         const chatSocket = new WebSocket(url)
 
         chatSocket.onmessage = function(e) {
-            let data = JSON.perse(e.data)
+            // Из consumers connect получаем данные (data)
+            let data = JSON.parse(e.data)
             console.log('Data:', data)
         }
 
